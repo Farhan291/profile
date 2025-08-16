@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="maincontainer">
+        <div class="head">
+            <h4>WELCOME </h3>
+                <div id="localTime"></div>
+        </div>
+        <div class="content">
+            <div>
+                <img src="./assets/gitprofile.jpg" alt="profile">
+
+            </div>
+            <div class="text">
+                <div class="title">About:</div>
+                <div class="about"> <span style="font-weight: bold;">Hi,i am Farhan </span> currently pursuing undergrad
+                    in computer engineering.
+                    <br />My intersets mostly revolve around backend,networking and low level stuff but i can do
+                    frontend
+                    and
+                    devops.
+                    Apart from computer, i enjoy maths, watching anime and playing games.
+                </div>
+                <div class="title">Projects:</div>
+                <div class="about">
+                    <div class="project">
+                        <div>
+                            <a href="https://github.com/Farhan291/lightchan">>Lightchan (imageboard)</a>
+                            <br />Anonymous discussion platform with various boards
+                        </div>
+                        <div> <a href="https://github.com/Farhan291/Ember">>Ember (http server)</a><br />
+                            HTTP server from scratch in C
+                        </div>
+                        <div><a href="https://github.com/Farhan291/fetchy">>Fetch (mini curl)</a>
+                            <br />minimal,curl-like command-line utility in C for fetching web content over HTTP/HTTPS
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- <div class="title">Blogs:</div> -->
+                <!-- space for blog if wrote in future-->
+                <div class="title">Contact:</div>
+                <div class="contact">
+                    <a href="https://github.com/Farhan291">Github</a>
+                    <a href="mailto:farhan29110511@gmail.com">Email</a>
+                    <a
+                        href="https://www.linkedin.com/in/mohammed-f-a153a4279?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div id="localTime"></div>
+    
+
+</body>
+<script>
+    function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+
+    document.getElementById('localTime').textContent = timeString;
+  }
+
+  setInterval(updateTime, 1000);
+  updateTime();
+    const images = [
+        './assets/megumi.png',
+        "./assets/back1.jpg",
+        "./assets/back4.png",
+        "./assets/back5.jpg",
+        "./assets/back6.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function changeBackground() {
+        //console.log("Changing background to", images[currentIndex]);
+        document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+        currentIndex = (currentIndex + 1) % images.length;
+
+    }
+    changeBackground();
+    setInterval(changeBackground, 30000);
+</script>
+
+</html>

@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+    font-family: 'VT323', monospace;
+    font-size: 1.1em;
+    background-image: url("./assets/megumi.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+}
+
+/* CRT Effect Layer */
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+        repeating-linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.2) 0px,
+            rgba(0, 0, 0, 0.2) 1px,
+            transparent 2px,
+            transparent 4px);
+    mix-blend-mode: multiply;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to right,
+            rgba(255, 0, 0, 0.1) 0 1px,
+            rgba(0, 255, 0, 0.1) 1px 2px,
+            rgba(0, 0, 255, 0.1) 2px 3px,
+            transparent 3px 4px);
+
+    mix-blend-mode: screen;
+    opacity: 0.3;
+}
+
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    width: 70%;
+    max-width: 600px;
+    min-width: 280px;
+    height: 90vh;
+    min-height: 60vh;
+    overflow: hidden;
+
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c2caca;
+    width: 100%;
+    height: 30px;
+
+}
+
+.text {
+    background-color: rgba(10, 20, 35, 0.8);
+    color: #e0e0e0;
+    height: 100%;
+
+}
+
+.about {
+    border-bottom: 2px solid black;
+    text-align: left;
+    padding-left: 10px;
+
+}
+
+.title {
+    border-bottom: 2px solid black;
+    padding-left: 10px;
+
+}
+
+.maincontainer img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.project a {
+    color: #00FFFF;
+
+
+}
+
+.contact a {
+    color: #00FFFF;
+    padding-left: 10px;
+}
+
+@media(min-width:910px) {
+    body {
+        padding-top: 10%;
+    }
+
+    .maincontainer {
+        display: flex;
+        width: 80%;
+        max-width: 1280px;
+        height: 60vh;
+        border: 2px solid black;
+        font-family: 'VT323', monospace;
+        font-size: 1.4em;
+    }
+
+    .maincontainer img {
+        max-width: 456px;
+    }
+
+    .head {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 2px;
+        border-bottom: 2px solid black;
+
+    }
+
+    .content {
+        display: flex;
+        flex: 1;
+
+    }
+
+    .content> :first-child {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 400px;
+        border-right: 2px solid #a0a0a0;
+        height: 100%;
+    }
+
+    .text {
+        flex-grow: 1;
+    }
+    
+    .maincontainer img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
